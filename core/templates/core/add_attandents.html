@@ -14,7 +14,7 @@ Attandents{% endblock title %} {% block body %}
           <div class="form-floating mb-3">
             <select class="form-select form-select-md" name="name">
               {% for employee in employeeList %}
-              <option value="{{employee.id}}">{{employee.name}}</option>
+              <option value="{{employee.name}}">{{employee.name}}</option>
               {% endfor %}
             </select>
             <label for="name">Name</label>
@@ -26,6 +26,7 @@ Attandents{% endblock title %} {% block body %}
               type="date"
               name="date"
               placeholder="date"
+              required
             />
             <label for="date">Date</label>
           </div>
@@ -36,6 +37,7 @@ Attandents{% endblock title %} {% block body %}
               type="time"
               placeholder="Password"
               name="entry"
+              required
             />
             <label for="entry">In Time</label>
           </div>
@@ -46,6 +48,7 @@ Attandents{% endblock title %} {% block body %}
               type="time"
               placeholder="Password"
               name="out"
+              required
             />
             <label for="out">Out Time</label>
           </div>
@@ -56,6 +59,7 @@ Attandents{% endblock title %} {% block body %}
               type="number"
               placeholder="Password"
               name="total_hour"
+              required
             />
             <label for="total_hour">Total Hour</label>
           </div>

@@ -11,7 +11,7 @@ class Atandents(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE,null=True,blank=True)
 
     def __str__(self):
-        return self.category
+        return self.name
     
 class Employees(models.Model):
     name = models.CharField(max_length=250)
