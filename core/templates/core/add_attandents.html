@@ -9,14 +9,25 @@ Attandents{% endblock title %} {% block body %}
         </div>
       </div>
       <div class="col-12">
+        {% if error %}
+        <div class="alert alert-danger">{{ error }}</div>
+        {% endif %} {% if success %}
+        <div class="alert alert-success">{{ success }}</div>
+        {% endif %}
         <form action="" method="POST">
           {% csrf_token %}
           <div class="form-floating mb-3">
-            <select class="form-select form-select-md" name="name">
+            <select
+              class="form-select form-select-md"
+              name="employee_id"
+              required
+            >
+              <option value="">-- Select Employee --</option>
               {% for employee in employeeList %}
-              <option value="{{employee.name}}">{{employee.name}}</option>
+              <option value="{{ employee.id }}">{{ employee.name }}</option>
               {% endfor %}
             </select>
+
             <label for="name">Name</label>
           </div>
           <div class="form-floating mb-3">
